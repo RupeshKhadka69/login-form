@@ -5,27 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form-- Sample</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+     <header>
+        <nav class="flex">
+            <h2>Rupesh</h2>
+            <button class="desk-login">Log in</button>
+        </nav>
+     </header>
     <div class="container">
        <div class="wrapper flex">
         <div class="login-form flex">
            <form action="/">
             <h1>Create an account</h1>
             <p class="m0">Lets get started with 30Day free trial</p>
-            <div class="name m2" >
-                <input type="text" placeholder="Name">
+            <div class="text-field" >
+                <input type="text" id="name" required>
+                <span></span>
+                <label >Username</label>
             </div>
-            <div class="email m1">
-                <input type="email" placeholder="Email">
+            <div class="text-field">
+                <input type="email"  required>
+                <span></span>
+                <label >email</label>
             </div>
-            <div class="name m1">
-                <input type="password" placeholder="Password">
+            <div class="text-field">
+                <input type="password" id="password" required>
+                <span></span>
+                <label>password</label>
             </div>
-            <button class="m2">create account</button>
-            <button class="m1">sign up with google</button>
+            <button class="m2 btn1">create account</button>
+            <button class="m1 btn2"><i class="fa-brands fa-google"></i> sign up with google</button>
+
+            <div class="m1 mobile-login">
+                <p>Already have an account? <a href="#">Log in</a></p>
+            </div>
            </form>
 
         </div>

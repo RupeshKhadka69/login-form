@@ -4,11 +4,44 @@
     margin: 0;
     padding: 0;
 }
+h1 {
+    font-size: clamp(1rem, 8vw,2rem);
+}
+h2 {
+    font-size: clamp(1rem, 5vw,1.5rem);
+}
+p {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+}
 body {
     font-family: 'Rubik', sans-serif;
+    background-color: rgba(245, 245, 220, 0.83);
 }
+nav {
+    justify-content: space-between;
+    align-items: center;
+    padding:.5rem 1.3rem;
 
-
+}
+nav button {
+    padding: .8rem 1.5rem;
+    border-radius: 20px;
+    background-color: rgba(27, 28, 29, 0.795);
+    transition: .3s ease;
+    color: #fff;
+    font-family: inherit;
+}
+.btn2 {
+    background-color: rgba(59, 124, 59, 0.648);
+    transition: .3s ease;
+}
+.btn2:hover {
+    background-color: rgba(50, 144, 7, 0.953);
+}
+nav button:hover {
+    
+    background-color: rgb(27, 28, 29);
+}
 .flex {
     display: flex;
 }
@@ -17,6 +50,10 @@ img {
     width: 100%; 
     object-fit: cover;
 }
+.container {
+    width: 80%;
+    margin-inline: auto;
+}
 
 
 .wrapper {
@@ -24,6 +61,7 @@ img {
      padding: 2rem 5rem; 
     height: 100vh;
     justify-content: center;
+    align-items: center;
 
 } 
 .m0{margin-top: .5rem;}
@@ -41,7 +79,8 @@ img {
     justify-content: center;
     align-items: center;
 }
-button {
+
+.btn1, .btn2{
     display:block;
     width: 100%;
     padding: .5rem 1rem;
@@ -54,12 +93,171 @@ form {
     width: 100%;
     max-width: 20rem;
 }
+
+form .text-field {
+    position: relative;
+    border-bottom: 2px solid rgba(17, 17, 17, 0.89);
+    margin: 30px 0;
+}
+.text-field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    font-family: inherit;
+}
+.text-field  label {
+    position: absolute;
+     top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s; 
+
+}
+.text-field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+}
+.text-field input:focus ~ label,
+  .text-field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+    font-size: 14px;
+  }
+  
+.text-field input:focus ~ span::before,
+.text-field input:valid ~ span::before{
+  width: 100%;
+}
+.btn1{
+    background-color: rgba(27, 28, 29, 0.795);
+    color: #fff;
+    transition: .3s ease;
+}
+.btn1:hover {
+    background-color: rgb(27, 28, 29);
+}
+.mobile-login {
+    display: none;
+}
+a {
+    color: rgba(33, 33, 33, 0.729);
+    text-decoration: none;
+    font-family: inherit;
+    padding-inline: .5rem;
+    transition: ease;
+}
+a:hover {
+    color: rgb(21, 21, 21);
+}
+button {
+    cursor: pointer;
+}
+
+
+
+
+  
+/*  */
+
+
+.something {
+    width: 200px;
+    margin-bottom: 40px;
+
+    position: relative;
+    border-bottom: 2px solid red;
+}
 input {
     width: 100%;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid black;
-    padding-block: .4rem ;
-    font-size: 1rem;
-    font-family: inherit;
+
+}
+.something label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+}
+.something ~ input:focus ~ label ,
+.something ~ input:valid  ~ label {
+    top: -5px;
+    color: green;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 800px ){
+    .image {
+        display: none;
+    }
+    .mobile-login {
+        display: block;
+        text-align: center;
+    }
+    .container {
+        width: 100%;
+    }
+    .desk-login {
+        display: none;
+    }
+    .wrapper {
+        padding-inline: 1rem; 
+       height: 100vh;
+   
+   }
+   .wrapper > div {
+    width: 100%;
+  }
+
+ 
+}
+@media screen and  (min-width:801px ) and (max-width:1100px){
+    .img  {
+        width: 400px;
+        margin: auto;
+    }
+    .wrapper {
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+}
+@media screen and (min-width: 1600px) {
+    .container {
+            width: 80%;
+            margin-inline: auto;
+        
+
+    }
+    nav {
+        width: 80%;
+        margin: auto;
+    }
+    form {
+        width: 100%;
+    }
+    form {
+        width: 100%;
+        max-width: 25rem;
+    }
+    .img  {
+        width: 500px;
+        width: 100%;
+        margin: auto;
+    }
 }
